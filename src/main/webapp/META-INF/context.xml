@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="">
+	<Valve
+		className="org.apache.catalina.valves.JDBCAccessLogValve"
+		connectionName="miaolilohas"
+		connectionPassword="AUL6XU4xk4cji6"
+		driverName="org.postgresql.Driver"
+		connectionURL="jdbc:postgresql://miaolilohas.ccstzfr39znz.ap-southeast-1.rds.amazonaws.com:5432/MiaoliLohasDB"
+		tableName='"AccessLog"'
+		remoteHostField='"remoteHost"'
+		userField='"userName"'
+		virtualHostField='"virtualHost"'
+		methodField='"method"'
+		queryField='"query"'
+		statusField='"status"'
+		bytesField='"bytes"'
+		refererField='"referer"'
+		userAgentField='"userAgent"'
+		pattern="combined"
+		resolveHosts="false"
+	/>
+	<Resource
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		type="javax.sql.DataSource"
+
+		auth="Container"
+		closeMethod="close"
+		name="jdbc/MiaoliLohasDS"
+		url="jdbc:postgresql://miaolilohas.ccstzfr39znz.ap-southeast-1.rds.amazonaws.com:5432/MiaoliLohasDB"
+
+		defaultAutoCommit="false"
+		defaultCatalog="e95Mall"
+		driverClassName="org.postgresql.Driver"
+		username="miaolilohas"
+		password="AUL6XU4xk4cji6"
+		testOnBorrow="true"
+		testOnReturn="true"
+		testWhileIdle="true"
+		validationQuery="SELECT 1"
+		removeAbandoned="true"
+		logAbandoned="true"
+
+		rollbackOnReturn="true"
+	/>
+	<Realm
+		className="org.apache.catalina.realm.DataSourceRealm"
+
+		allRolesMode="authOnly"
+		dataSourceName="jdbc/MiaoliLohasDS"
+		digest="MD5"
+		digestEncoding="UTF-8"
+		localDataSource="true"
+		roleNameCol="role"
+		userCredCol="credentials"
+		userNameCol="name"
+		userRoleTable='"passwd"'
+		userTable='"passwd"'
+	/>
+</Context>

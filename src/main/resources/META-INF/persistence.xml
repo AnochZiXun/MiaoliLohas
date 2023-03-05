@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<non-jta-data-source>java:comp/env/jdbc/MiaoliLohasDS</non-jta-data-source>
+		<class>tw.gov.miaoli.lohas.entity.Packet</class>
+		<class>tw.gov.miaoli.lohas.entity.MerchandiseSpecification</class>
+		<class>tw.gov.miaoli.lohas.entity.Bulletin</class>
+		<class>tw.gov.miaoli.lohas.entity.AllPayHistory</class>
+		<class>tw.gov.miaoli.lohas.entity.AccessLog</class>
+		<class>tw.gov.miaoli.lohas.entity.InternalFrame</class>
+		<class>tw.gov.miaoli.lohas.entity.Mofo</class>
+		<class>tw.gov.miaoli.lohas.entity.Cart</class>
+		<class>tw.gov.miaoli.lohas.entity.Forgot</class>
+		<class>tw.gov.miaoli.lohas.entity.PacketStatus</class>
+		<class>tw.gov.miaoli.lohas.entity.Banner</class>
+		<class>tw.gov.miaoli.lohas.entity.Staff</class>
+		<class>tw.gov.miaoli.lohas.entity.Regular</class>
+		<class>tw.gov.miaoli.lohas.entity.MerchandiseImage</class>
+		<class>tw.gov.miaoli.lohas.entity.Merchandise</class>
+		<class>tw.gov.miaoli.lohas.entity.FrequentlyAskedQuestion</class>
+		<class>tw.gov.miaoli.lohas.entity.Shelf</class>
+		<properties>
+			<property name="eclipselink.jdbc.native-sql" value="true"/>
+			<property name="eclipselink.weaving" value="static"/>
+		</properties>
+	</persistence-unit>
+</persistence>
